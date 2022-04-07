@@ -31,4 +31,38 @@
     vertical-align: top;
     padding-left: 25px;
     padding-bottom: 10px;
+    margin-bottom: 0px;
   }
+
+
+  .celda {
+    width: 150px;
+    height: 100px;
+    padding: 0px;
+    border: 1px solid #aaaaaa;
+    
+  }
+  
+  .reiniciar{
+    margin-left: 46%;
+    color: rgb(44, 85, 3);
+    
+  }
+
+  .hover {
+    background-color: rgb(37, 152, 75);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 5pt;
+}
+
+.placeholder {
+  background-color: #F2F2F2;
+  outline: 1px solid #333;
+  width: 106px;
+  height: 165px;
+  transition: 1s;
+}

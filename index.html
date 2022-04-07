@@ -23,6 +23,9 @@
                 <li>
                     <a href="#media">HTML Media</a>
                 </li>
+                <li>
+                    <a href="#apis">HTML APIS</a>
+                </li>
                 
             </ul>
     <br>
@@ -328,9 +331,70 @@
             <iframe width="600" height="345" src="https://www.youtube.com/embed/_BdbtFLlonQ?controls=0">
             </iframe>
               
+
+            <h1 id="apis">HTML APIs</h1>
+            <h3>HTML Geolocation</h3>
+
+            <p>
+                La API de geolocalización HTML se utiliza para obtener la posición geográfica de un usuario.
+                Dado que esto puede comprometer la privacidad, la posición no está disponible a menos que el usuario la apruebe.
+            </p>
+
+            <p>Haga clic en el botón para obtener sus coordenadas.</p>
+
+            <button onclick="getLocation()">Probar</button>
+            <p id="demo"></p>
+            <br>
+            <h3>HTML Drag and Drop</h3>
+
+            <p>
+                En HTML, cualquier elemento se puede arrastrar y soltar.
+            </p>
+
+            <h3 align="center" id="puzzle"> Rompecabezas</h3>
+
+            
+
+            <img id="drag-5" src="recursos/fila-1-columna-1.jpg" draggable="true" ondragstart="drag(event)" width="150" height="100">
+            <img id="drag-1" src="recursos/fila-1-columna-1.jpg" draggable="true" ondragstart="drag(event)" width="150" height="100">
+            <img id="drag-8" src="recursos/fila-3-columna-2.jpg" draggable="true" ondragstart="drag(event)" width="150" height="100">
+            <img id="drag-3" src="recursos/fila-1-columna-3.jpg" draggable="true" ondragstart="drag(event)" width="150" height="100">
+            <img id="drag-2" src="recursos/fila-1-columna-2.jpg" draggable="true" ondragstart="drag(event)" width="150" height="100">
+            <img id="drag-6" src="recursos/fila-2-columna-3.jpg" draggable="true" ondragstart="drag(event)" width="150" height="100">
+            <img id="drag-4" src="recursos/fila-2-columna-1.jpg" draggable="true" ondragstart="drag(event)" width="150" height="100">
+            <img id="drag-9" src="recursos/fila-3-columna-3.jpg" draggable="true" ondragstart="drag(event)" width="150" height="100">
+            <img id="drag-7" src="recursos/fila-3-columna-1.jpg" draggable="true" ondragstart="drag(event)" width="150" height="100">
+            
+            <br>
+             <!--- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"  ></div> --->
+                <a class="reiniciar" href="javascript:location.reload()">Reiniciar Puzzle</a>
+            <br>
+            <br>
+            
+            
+
+            <table border="1" align="center">
+                <tr>
+                    <td class="celda" id="td-1" ondragleave="onleave(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="celda" id="td-2" ondragleave="onleave(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="celda" id="td-3" ondragleave="onleave(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                </tr>
+                <tr>
+                    <td class="celda" id="td-4" ondragleave="onleave(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="celda" id="td-5" ondragleave="onleave(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="celda" id="td-6" ondragleave="onleave(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                </tr>
+                <tr>
+                    <td class="celda" id="td-7" ondragleave="onleave(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="celda" id="td-8" ondragleave="onleave(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="celda" id="td-9" ondragleave="onleave(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                </tr>
+            </table>
+            <br>
+            
             
         </div>
-        
+
     </section>
 
 </body>
