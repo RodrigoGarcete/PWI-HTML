@@ -26,7 +26,12 @@
                 <li>
                     <a href="#apis">HTML APIS</a>
                 </li>
-                
+                <li>
+                    <a href="#storage-api">HTML Web Storage API</a>
+                </li>
+                <li>
+                    <a href="#workers-api">HTML Web Workers API</a>
+                </li>
             </ul>
     <br>
             <p>Selector Color Fondo</p>
@@ -392,6 +397,111 @@
             </table>
             <br>
             <br>
+            <br>
+
+            <h1 id="storage-api">HTML Web Storage API</h1>
+            <a href="#forms">ir a inicio</a>
+
+            <p>
+                Con el almacenamiento web, las aplicaciones web pueden almacenar datos localmente dentro del navegador del usuario.
+
+                Antes de HTML5, los datos de la aplicación tenían que almacenarse en cookies, incluidas en cada solicitud del servidor. El almacenamiento web es más seguro y se pueden almacenar grandes cantidades de datos localmente, sin afectar el rendimiento del sitio web.
+
+                A diferencia de las cookies, el límite de almacenamiento es mucho mayor (al menos 5 MB) y la información nunca se transfiere al servidor.
+
+                El almacenamiento web es por origen (por dominio y protocolo). Todas las páginas, de un solo origen, pueden almacenar y acceder a los mismos datos.
+            </p>
+
+            <br>
+
+            <script>
+                function clickCounter() {
+                  if (typeof(Storage) !== "undefined") {
+                    if (localStorage.clickcount) {
+                      localStorage.clickcount = Number(localStorage.clickcount)+1;
+                    } else {
+                      localStorage.clickcount = 1;
+                    }
+
+                    if (localStorage.clickcount == 1) {
+                        document.getElementById("result").innerHTML = "Has hecho click en el boton " + localStorage.clickcount + " vez.";
+                    }else{
+                        document.getElementById("result").innerHTML = "Has hecho click en el boton " + localStorage.clickcount + " veces.";
+                    }
+                    
+                  } else {
+                    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+                  }
+                }
+            </script>
+                
+                
+                
+            <p><button onclick="clickCounter()" type="button">Clickeame!</button></p>
+            <div id="result"></div>
+            <p>Haga clic en el botón para ver el aumento del contador.</p>
+            <p>Cierre la pestaña (o ventana) del navegador e intente nuevamente, y el contador continuará contando (no se reinicia).</p>
+
+            <br>
+            <script>
+                function clickCountersesion() {
+                  if (typeof(Storage) !== "undefined") {
+                    if (sessionStorage.clickcount) {
+                      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+                    } else {
+                      sessionStorage.clickcount = 1;
+                    }
+                    document.getElementById("result2").innerHTML = "Has hecho click en el boton " + sessionStorage.clickcount + " time(s) en esta sesion.";
+                  } else {
+                    document.getElementById("result2").innerHTML = "Sorry, your browser does not support web storage...";
+                  }
+                }
+                </script>
+
+                <p><button onclick="clickCountersesion()" type="button">Click me!</button></p>
+                <div id="result2"></div>
+                <p>Haga clic en el botón para ver el aumento del contador.</p>
+                <p>Cierre la pestaña (o ventana) del navegador e intente nuevamente, y el contador se restablecerá.</p>
+
+                <br>
+
+                <h1 id="workers-api">HTML Web Workers API</h1>
+                <a href="#forms">ir a inicio</a>
+                <br>
+                <p>
+                    Al ejecutar scripts en una página HTML, la página deja de responder hasta que el script ha terminado.
+                    Un trabajador web es un JavaScript que se ejecuta en segundo plano, independientemente de otros scripts, sin afectar al rendimiento de la página. Puede continuar haciendo lo que quiera: hacer clic, seleccionar cosas, etc., mientras que el trabajador web se ejecuta en segundo plano.
+                </p>
+                <br>
+
+                <p>Count numbers: <output id="result3"></output></p>
+                <button onclick="startWorker()">Start Worker</button> 
+                <button onclick="stopWorker()">Stop Worker</button>
+
+                <script>
+                    var w;
+                    
+                    function startWorker() {
+                      if(typeof(Worker) !== "undefined") {
+                        if(typeof(w) == "undefined") {
+                          w = new Worker("demo_workers.js");
+                        }
+                        w.onmessage = function(event) {
+                          document.getElementById("result3").innerHTML = event.data;
+                        };
+                      } else {
+                        document.getElementById("result3").innerHTML = "Sorry, your browser does not support Web Workers...";
+                      }
+                    }
+                    
+                    function stopWorker() { 
+                      w.terminate();
+                      w = undefined;
+                    }
+                    </script>
+            <br>
+            <hr>
+
             <br>
             <p>
                 <a href="https://jigsaw.w3.org/css-validator/check/referer">
